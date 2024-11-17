@@ -1,0 +1,4 @@
+[install]
+optional = false
+dev = true
+peer = false

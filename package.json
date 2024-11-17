@@ -1,0 +1,55 @@
+{
+  "name": "react-and-rails",
+  "module": "src/index.ts",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./adapter": "./dist/adapter",
+    "./adapter/react/client": "./dist/adapter/react/client.js",
+    "./adapter/react/server": "./dist/adapter/react/server.js"
+  },
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "package for supporting the react-and-rails ruby gem",
+  "scripts": {
+    "build": "bun build --target=browser ./src/index.ts ./src/adapter/react/client.ts ./src/adapter/react/server.ts -e react -e react-dom --outdir=dist && bun run build:declaration",
+    "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
+    "prepack": "bun install && bun run build"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlaw90/react-and-rails-js.git"
+  },
+  "keywords": [
+    "React",
+    "Ruby",
+    "on",
+    "Rails"
+  ],
+  "author": "James Lawrence",
+  "license": "MIT",
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "react": ">= 17.0.0",
+    "react-dom": ">= 17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}
