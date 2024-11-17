@@ -5,7 +5,6 @@ import type { ClientAdapter } from '..';
 let ReactClientAdapter: ClientAdapter<string | ComponentType, ReactNode>;
 
 try {
-  debugger;
   const { createRoot, hydrateRoot } = await import('react-dom/client');
 
   ReactClientAdapter = {

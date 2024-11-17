@@ -27,7 +27,6 @@ import { createElement } from "react";
 import ReactDOM from "react-dom";
 var ReactClientAdapter;
 try {
-  debugger;
   const { createRoot, hydrateRoot } = await import("react-dom/client");
   ReactClientAdapter = {
     createElement,
